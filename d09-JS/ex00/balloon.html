@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Balloon</title>
+    <style>
+        div.ballon_css{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 20%;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="ballon_css" id="ballon_js"></div>
+    <script>
+        var color = ['#ff0000','#00ff00','#0000ff'];
+        var color_index = 0;
+        var ballon;
+        var size = 200;
+
+        function on_click(){
+            size = size + 10;
+            if (size > 420) {
+                size = 200;
+                color_index = 0;
+            }
+            color_index++;
+            if (color_index > 2){
+                color_index = 0;
+            }
+            UpdateBallon();
+        }
+
+        function on_leave(){
+            size = size - 5;
+            if (size < 200)
+                size =200;
+            color_index--;
+            if (color_index < 0)
+                color_index = 2; 
+            UpdateBallon();
+        }
+
+        function UpdateBallon(){
+            ballon.style.width = size+'px';
+            ballon.style.height = size+'px';
+            ballon.style.backgroundColor = color[color_index];
+        }
+
+        ballon = document.querySelector("#ballon_js");
+        ballon.addEventListener("click", on_click);
+        ballon.addEventListener("mouseleave", on_leave);
+    </script>
+</body>
+</html>

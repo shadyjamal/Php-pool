@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Calculatrice</title>
+    <style>
+        .calcul{
+            text-align: center;
+            padding: 100px;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="calcul">
+        <h1>Calculatrice</h1>
+        <div >
+            <input type="text" id="nbr1" value="">
+            <select id="op">
+                <option value="add">+</option>
+                <option value="min">-</option>
+                <option value="mul">×</option>
+                <option value="div">÷</option>
+                <option value="mod">%</option>
+            </select>
+            <input type="text" id="nbr2" value="">
+            <button id="calc">Try me!</button>
+        </div>
+    </div>
+    <script>
+        var nbr1;
+        var nbr2;
+        var op;
+        var calc;
+
+        function ft_check(nb1, nb2){
+            if (nb1 >= 0 && nb2 >= 0)
+                return true;
+            return false;
+        }
+
+        function calculate(){
+            var nb1 = Number(nbr1.val());
+            var nb2 = Number(nbr2.val());
+            if (!ft_check(nb1, nb2)){
+                alert('Error :(');
+                return ;
+            }
+            switch (op.val()) {
+                case ("add"):
+                    show(nb1 + nb2);
+                    break;
+                case ("min"):
+                    show(nb1 - nb2);
+                    break;
+                case ("mul"):
+                    show(nb1 * nb2);
+                    break;
+                case ("div"):
+                    if (nb2 == 0)
+                        show("It’s over 9000!");
+                    else
+                        show(nb1 / nb2);
+                    break;
+                case ("mod"):
+                    if (nb2 == 0)
+                        show("It’s over 9000!");
+                    else
+                        show(nb1 % nb2);
+                    break;
+                default:
+                    show("Error :(");
+            }
+        }
+
+        function show(result)
+        {
+            alert(result);
+            console.log(result);
+        }
+        function ShowAlert()
+        {
+            alert('Please, use me...');
+        }
+
+        nbr1 = $("#nbr1");
+        nbr2 = $("#nbr2");
+        op = $("#op");
+        calc = $("#calc");
+        calc.on("click", calculate);
+        window.setInterval(ShowAlert, 30000);
+    </script>
+</body>
+</html>

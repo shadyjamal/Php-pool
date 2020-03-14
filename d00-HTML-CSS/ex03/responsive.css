@@ -1,0 +1,67 @@
+.lightgreen {
+    background: lightgreen;
+}
+
+.mettaloid {
+    background: rgb(128, 138, 82);
+}
+
+.posttransition {
+    background: rgb(102, 100, 100);
+}
+.transition {
+    background: rgb(214, 129, 136);
+}
+
+.alkali {
+    background: rgb(240, 96, 71);
+}
+.unknown {
+    background: lightgray;
+}
+.alkalinem {
+    background: moccasin;
+}
+.actinide {
+    background: hotpink;
+}
+.lanthanide {
+    background: rgb(230, 154, 230);
+}
+.noblegas {
+    background: lightskyblue;
+}
+.rnonmetal {
+    background: gold;
+}
+
+.mass {
+    font-size: 1vw;
+    text-align: right;
+    height: 20%;
+}
+
+.number {
+    font-size: 1vw;
+    text-align: left;
+    height: 20%;
+}
+
+.symbol {
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    height: 60%;
+    line-height: 3.1vw;
+}
+.cell{
+    width: 0.2%;
+    height: 5vw;
+}
+.cell>div{
+    height: 100%;
+    width: 100%;
+}
+.imgc{
+    width: 30vw;
+}

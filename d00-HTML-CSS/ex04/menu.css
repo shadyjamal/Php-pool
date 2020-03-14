@@ -1,0 +1,32 @@
+body {
+    background-color: turquoise;
+}
+div ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+}
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+div a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+div a:hover{
+    color:red;
+    border-bottom: 2px solid gold;
+}
+div > ul li:hover .sous{
+    display: block;
+}
